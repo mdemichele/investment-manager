@@ -23,8 +23,18 @@ def mortgageCalc(principal, loan_length, annual_interest):
     # Finally, multiply quotient by the principal loan amount to get the monthly mortgage payment
     monthly_payment = principal * quotient
     
-    print("Your Monthly Payment on Principal and Interest will be approximately: $" + str(int(monthly_payment)))
     return int(monthly_payment)
     
-# Say, purchase price is $600,000. You put down 10% plus closing costs. So, you borrow $540,000
-answer = mortgageCalc(426800, 30, 7.0)
+
+def main():
+    # Say, purchase price is $600,000. You put down 10% plus closing costs. So, you borrow $540,000
+    principal = input("Please enter the Principal: ")
+    loan_length = input("Please enter the Loan Length: ")
+    annual_interest = input("Please enter the Annual Interest: ")
+
+    monthly_payment = mortgageCalc(int(principal), int(loan_length), float(annual_interest))
+
+    print("Your monthly payment on Principal and Interest will be approximately: $" + str(monthly_payment))
+
+if __name__ == "__main__":
+    main()
