@@ -36,9 +36,12 @@ def main():
 
     while(continueProgram == 1):
         principal = input("Please enter the Principal: ")
+        # TODO: check type
         loan_length = input("Please enter the Loan Length: ")
+        # TODO: check type
         annual_interest = input("Please enter the Annual Interest: ")
 
+        # TODO: check type
         monthly_payment = mortgageCalc(int(principal), int(loan_length), float(annual_interest))
 
         print("Your monthly payment on Principal and Interest will be approximately: $" + str(monthly_payment))
