@@ -1,4 +1,6 @@
-# Description: This is just a simple function that lets you calculate your monthly mortgage payments
+# Author: Matt DeMichele
+# Last Update: 27 January 2025
+# Description: This is just a simple program that lets you calculate your monthly mortgage payments
 
 def mortgageCalc(principal, loan_length, annual_interest):
     """Returns the monthly mortgage payment given home price, down_payment, length of loan, and interest_rate"""
@@ -24,17 +26,28 @@ def mortgageCalc(principal, loan_length, annual_interest):
     monthly_payment = principal * quotient
     
     return int(monthly_payment)
+
+def showAmmortization():
+    """Returns a formatted chart of your ammortization schedule based on the inputted data"""
     
 
 def main():
-    # Say, purchase price is $600,000. You put down 10% plus closing costs. So, you borrow $540,000
-    principal = input("Please enter the Principal: ")
-    loan_length = input("Please enter the Loan Length: ")
-    annual_interest = input("Please enter the Annual Interest: ")
+    continueProgram = 1
 
-    monthly_payment = mortgageCalc(int(principal), int(loan_length), float(annual_interest))
+    while(continueProgram == 1):
+        principal = input("Please enter the Principal: ")
+        loan_length = input("Please enter the Loan Length: ")
+        annual_interest = input("Please enter the Annual Interest: ")
 
-    print("Your monthly payment on Principal and Interest will be approximately: $" + str(monthly_payment))
+        monthly_payment = mortgageCalc(int(principal), int(loan_length), float(annual_interest))
+
+        print("Your monthly payment on Principal and Interest will be approximately: $" + str(monthly_payment))
+
+        # Try a New Input?
+        user_response = input("Would you like to try a new input? Press 1 to try a new input. Press 2 to exit: ")
+        if (int(user_response) == 2):
+            continueProgram = 0
+
 
 if __name__ == "__main__":
     main()
